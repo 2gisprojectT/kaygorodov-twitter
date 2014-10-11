@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://twitter.com/" />
+<title>Change Location</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Change Location</td></tr>
+</thead><tbody>
+<tr>
+	<td>store</td>
+	<td>Novosibirsk</td>
+	<td>location</td>
+</tr>
+<!--Go to the Settings Page-->
+<tr>
+	<td>open</td>
+	<td>/settings/profile</td>
+	<td></td>
+</tr>
+<!--Check, that Location will be changed-->
+<tr>
+	<td>assertNotValue</td>
+	<td>id=user_location</td>
+	<td>${location}</td>
+</tr>
+<!--Change Location-->
+<tr>
+	<td>type</td>
+	<td>id=user_location</td>
+	<td>${location}</td>
+</tr>
+<!--Save changes-->
+<tr>
+	<td>clickAndWait</td>
+	<td>id=settings_save</td>
+	<td></td>
+</tr>
+<!--Verify Ok alert-->
+<tr>
+	<td>verifyText</td>
+	<td>css=#settings-alert-box &gt; h4</td>
+	<td>Thanks, your settings have been saved.</td>
+</tr>
+<!--Assert, that Location was changed-->
+<tr>
+	<td>assertValue</td>
+	<td>id=user_location</td>
+	<td>${location}</td>
+</tr>
+<!--Clean up-->
+<tr>
+	<td>open</td>
+	<td>/settings/profile</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_location</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=settings_save</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

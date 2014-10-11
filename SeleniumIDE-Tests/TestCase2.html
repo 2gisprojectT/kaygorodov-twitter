@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://twitter.com/" />
+<title>Search user</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Search user</td></tr>
+</thead><tbody>
+<!--Setup-->
+<tr>
+	<td>store</td>
+	<td>Tom Hanks</td>
+	<td>username</td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<!--Enter username to search box-->
+<tr>
+	<td>type</td>
+	<td>id=search-query</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<!--Show only people-->
+<tr>
+	<td>clickAndWait</td>
+	<td>//div[@id='page-container']/div/div/ul/li[2]/a/span[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=strong.search-query</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=strong.fullname.js-action-profile-name</td>
+	<td>${username}</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
