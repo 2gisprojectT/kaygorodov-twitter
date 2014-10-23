@@ -10,11 +10,12 @@ class ModalTweetBox(BaseComponent):
     }
 
     selectors = {
-        'count': 'tweet-counter'
+        'send_btn': '.tweet-btn.js-tweet-btn',
+        'count': '.tweet-counter'
     }
 
     paths = {
-        'send': '//*[@id="global-tweet-dialog-dialog"]/div[2]/div[4]/form/div[2]/div[2]/button'
+        'send_btn': '//*[@id="global-tweet-dialog-dialog"]/div[2]/div[4]/form/div[2]/div[2]/button'
     }
 
     def open(self):
@@ -22,4 +23,4 @@ class ModalTweetBox(BaseComponent):
 
     def send_tweet(self, text):
         self.driver.find_element_by_id(self.ids['input']).send_keys(text)
-        self.driver.find_element_by_xpath(self.paths['send']).click()
+        self.driver.find_element_by_xpath(self.paths['send_btn']).click()
