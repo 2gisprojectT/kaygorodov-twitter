@@ -1,4 +1,13 @@
+env:
+  global:
+    - secure: PVlEIBvzxwtgoBPVYBkgRIqUrkGDmt2ysJlpV6wkQ7jNLoBgkszGz+oqid/M6vs70CTcQ7HYXP/e+LjJ54pbe1WKvDR1o3Phf1UwN9pRRoqff61YtDN20iPFtFl1oKIk5pxhgyu3IgXhIxpEVcsLdUWrOR0+gb8S35kjSUMQU8I=
+    - secure: ak4mu1oa7PNaXOIXz0KPgzg3GnVh1LsNX0p81+gqRH3rZ1xqZWlLJAlmozfMV3isdQqepeozsSniciRnVkeQNEMAIBpCkBhyNB5yo0YqoRW6RYiWQie6KjA1l4K26ZP3r2kkvD3UY2z1Xpbbw+9Hd/tfy7EQju7ESPBG2WUpgWE=
+
+addons:
+  sauce_connect: true
+
 language: python
+
 python:
   - "2.7"
-script: "nosetests ./FSM-Lion/LionTest.py"
+script: "nosetests ./2gis-test/tests/search_routes.py"
