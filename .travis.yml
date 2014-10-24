@@ -10,4 +10,4 @@ language: python
 
 python:
   - "2.7"
-script: "nosetests ./FSM-Lion/LionTest.py"
+script: "nosetests ./2gis-test/tests/search_routes.py"
