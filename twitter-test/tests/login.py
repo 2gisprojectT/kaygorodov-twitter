@@ -12,7 +12,7 @@ from config import config
 class Login(TestCase):
     def setUp(self):
         self.desired_capabilities['name'] = self.id()
-        self.desired_capabilities['public'] = 'share'
+        self.desired_capabilities['public'] = 'public'
         self.desired_capabilities['build'] = '1.0'
         sauce_url = "http://%s:%s@ondemand.saucelabs.com:80/wd/hub"
         self.driver = webdriver.Remote(
