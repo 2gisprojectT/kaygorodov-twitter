@@ -1,9 +1,4 @@
-env:
-  global:
-    - secure: eqVOCDRy1ft65bKTO2NaRsrIyOkytQyw1uaLRjvmxxv0wA3eXJAvAxvY76CS9JRtCCsAUwKRtUias0XTpdpAI54hUMkH+5yLfeP77AvVAoTjuVnkv5C2IBZRWwhyuT130FrB0iQ+jNimh8s+4AZPOAGf3vv7tOkzwvm/6YgZfzU=
-    - secure: bjlH8rNahaIHbG7u4ezmRrNtV8dbteIoW7wRjJnDx9dZcb/lXAqnrdPsLvA2DbZVsmZccUeH1eg+QJVVRFqCeKvrNrgdM5tBO5wRkvlv0Q88gaFFfaLCBTZhWJRXxSU2GIFhrxQddMUrAFnOK18duv+CWfpykptLJJ21rZflOFI=
-
-before_install:
+install:
  - pip install selenium pytest pytest-xdist sauceclient unittest-data-provider
 
 addons:
@@ -13,4 +8,4 @@ language: python
 
 python:
   - "2.7"
-script: "py.test -n2 --boxed ./2gis-test/tests/test_2gis.py"
+script: "py.test -n2 --boxed ./twitter-test/tests/login.py ./twitter-test/tests/post_tweet.py"
