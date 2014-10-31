@@ -8,5 +8,5 @@
   - by phone
 
 - **Post tweet (boundary-value testing)**
-  - valid tweet (<= 140 characters)
-  - invalid tweet ( > 140)
+  - valid tweet (0 < N <= 140 characters)
+  - invalid tweet ( > 140 and 0, spaces)

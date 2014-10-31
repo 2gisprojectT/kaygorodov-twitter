@@ -38,6 +38,7 @@ class PostTweet(TestCase):
         finally:
             self.driver.quit()
 
+    # positive tests
     valid_tweets = lambda: (
         ('hello tweet',),
         ('x',),
@@ -52,9 +53,22 @@ class PostTweet(TestCase):
         self.home_page.modal_tweet_box.post_tweet()
         assert tweet in self.driver.page_source
 
-    def test_post_tweet_negative(self):
+    # negative tests
+    def test_post_tweet_extra_symbols(self):
         self.home_page.modal_tweet_box.open()
         tweet = 'c'*141
+        self.home_page.modal_tweet_box.enter_tweet(tweet)
+        self.assertFalse(self.home_page.modal_tweet_box.tweet_button.enabled)
+
+    def test_post_tweet_empty(self):
+        self.home_page.modal_tweet_box.open()
+        tweet = ''
+        self.home_page.modal_tweet_box.enter_tweet(tweet)
+        self.assertFalse(self.home_page.modal_tweet_box.tweet_button.enabled)
+
+    def test_post_tweet_spaces(self):
+        self.home_page.modal_tweet_box.open()
+        tweet = '       '
         self.home_page.modal_tweet_box.enter_tweet(tweet)
         self.assertFalse(self.home_page.modal_tweet_box.tweet_button.enabled)
 
